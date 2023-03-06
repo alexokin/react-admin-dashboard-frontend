@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import { setMode } from "../store/reducers/globalSlice";
 
-function NavBar() {
+function NavBar({ isSidebarOpen, setIsSidebarOpen }) {
   const dispatch = useDispatch();
   const theme = useTheme();
   return (
@@ -32,7 +32,7 @@ function NavBar() {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton onClick={() => console.log("open/close sidebar")}>
+          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
           <FlexBetween
@@ -57,7 +57,7 @@ function NavBar() {
             )}
           </IconButton>
           <IconButton>
-            <SettingsOutlined sx={{ fontSize: "25px" }}/>
+            <SettingsOutlined sx={{ fontSize: "25px" }} />
           </IconButton>
         </FlexBetween>
       </Toolbar>
