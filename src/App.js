@@ -3,11 +3,12 @@ import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import Customers from "./pages/customers/customers";
 import Dashboard from "./pages/dashboard/dashboard";
 import Layout from "./pages/layout/layout";
 import Products from "./pages/products/products";
-import { themeSettings } from "./theme";
 
+import { themeSettings } from "./theme";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -21,7 +22,8 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/products" element={<Products />}/>
+              <Route path="/products" element={<Products />} />
+              <Route path="/customers" element={<Customers />} />
             </Route>
           </Routes>
         </ThemeProvider>
