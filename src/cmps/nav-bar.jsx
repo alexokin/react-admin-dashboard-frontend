@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  ArrowDropUpOutlined,
+
   DarkModeOutlined,
   Menu as MenuIcon,
   LightModeOutlined,

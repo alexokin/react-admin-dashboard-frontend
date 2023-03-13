@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Collapse,
-  Rating,
-  Typography,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import { useGetProductsQuery } from "../../store/rtk.service";
 import Header from "../../cmps/header";
