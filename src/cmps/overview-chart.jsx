@@ -6,6 +6,7 @@ import { useGetSalesQuery } from "../store/rtk.service";
 function OverviewChart({ isDashboard = false, view }) {
   const theme = useTheme();
   const { data, isLoading } = useGetSalesQuery();
+  
   const [totalSalesLine, totalUnitsLine] = useMemo(() => {
     if (!data) return [];
     const { monthlyData } = data;
