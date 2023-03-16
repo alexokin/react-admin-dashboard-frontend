@@ -6,7 +6,7 @@ import { useGetSalesQuery } from "../store/rtk.service";
 function OverviewChart({ isDashboard = false, view }) {
   const theme = useTheme();
   const { data, isLoading } = useGetSalesQuery();
-  
+
   const [totalSalesLine, totalUnitsLine] = useMemo(() => {
     if (!data) return [];
     const { monthlyData } = data;
@@ -41,7 +41,7 @@ function OverviewChart({ isDashboard = false, view }) {
         units: 0,
       }
     );
-    return [[totalSalesLine],[totalUnitsLine]]
+    return [[totalSalesLine], [totalUnitsLine]];
   }, [data]);
 
   if (!data || isLoading) return "Loading...";
@@ -93,6 +93,7 @@ function OverviewChart({ isDashboard = false, view }) {
       }}
       yFormat=" >-.2f"
       curve="catmullRom"
+      enableArea={isDashboard}
       axisTop={null}
       axisRight={null}
       axisBottom={{
@@ -110,6 +111,7 @@ function OverviewChart({ isDashboard = false, view }) {
       axisLeft={{
         orient: "left",
         tickSize: 5,
+        tickValues:5,
         tickPadding: 5,
         tickRotation: 0,
         legend: isDashboard
